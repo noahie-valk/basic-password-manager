@@ -13,7 +13,7 @@ A simple, secure password manager built with Python. This project uses encryptio
 
 ## Download
 
-- make download link for windows
+- [Download for Windows](https://github.com/noahie-valk/basic-password-manager/archive/refs/tags/v1.0.0.zip)
 
 *Note: Ensure you have the necessary permissions to run executables on your system.*
 
