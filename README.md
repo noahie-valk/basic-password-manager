@@ -30,8 +30,8 @@ If you want to run or modify the source code:
 
 1. **Clone the Repository:**
    ```bash
-   git clone 
-   cd Project-Shark
+   git clone https://github.com/noahie-valk/basic-password-manager.git
+   cd basic-password-manager
    ```
 
 2. **Set Up Virtual Environment:**
