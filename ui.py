@@ -2,7 +2,14 @@ import tkinter as tk
 from tkinter import messagebox, simpledialog
 import pyperclip
 import time
-from storage import add_credential, get_credentials, update_credential, delete_credential, generate_password
+from storage import (
+    add_credential,
+    get_credentials,
+    update_credential,
+    delete_credential,
+    generate_password,
+    initialize_db,
+)
 from encryption import derive_key
 from auth import verify_master_password
 
@@ -103,10 +110,15 @@ class PasswordManagerApp(tk.Tk):
 
 if __name__ == '__main__':
     if verify_master_password():
-        master_password = simpledialog.askstring("Master Password", "Re-enter your master password to derive encryption key:", show='*')
+        initialize_db()
+        master_password = simpledialog.askstring(
+            "Master Password",
+            "Re-enter your master password to derive encryption key:",
+            show='*',
+        )
         salt = b'fixed_salt_value_here'  # Replace with actual stored/retrieved salt for better security
         key = derive_key(master_password, salt)
-        
+
         app = PasswordManagerApp(key)
         app.mainloop()
 
