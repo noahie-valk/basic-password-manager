@@ -1,12 +1,14 @@
 from auth import verify_master_password
 from encryption import derive_key
 from ui import PasswordManagerApp
+from storage import initialize_db
 import tkinter as tk
 from tkinter import simpledialog
 
 
 def main():
     if verify_master_password():
+        initialize_db()
         root = tk.Tk()
         root.withdraw()  # Hide the root window
         master_password = simpledialog.askstring(
